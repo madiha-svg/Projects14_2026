@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  height: 30px;
+  width: 30px;
+  background-color: #ccc;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.show {
+  font-size: 30px;
+}
+
+.hide {
+  font-size: 0px;
+}
+
+.remove {
+  visibility: hidden;
+}
