@@ -1,0 +1,19 @@
+.app {
+  text-align: center;
+}
+
+.doing {
+  position: relative;
+  margin-left: 250px;
+  margin-top: -53px;
+}
+
+.done {
+  position: relative;
+  margin-left: 500px;
+  margin-top: -53px;
+}
+
+/* .todo-task {
+  justify-content: space-between;
+} */
