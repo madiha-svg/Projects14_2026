@@ -43,45 +43,29 @@ function App() {
 
   useEffect(() => {
     if (freq) {
-      const yAxis = Object.values(freq)
-        .map((item) => item * 10)
-        .sort((a, b) => a - b);
+      const entries = Object.entries(freq).sort((a, b) => a[0] - b[0]);
 
-      const xAxis = Object.keys(freq).sort((a, b) => a - b);
+      const xAxis = entries.map(([key]) => key);
+      const yAxis = entries.map(([, value]) => value * 10);
+
       setXAxis(xAxis);
-
       setYAxis(yAxis);
     }
   }, [freq]);
   console.log("yAxis", yAxis);
   console.log("xAxis", xAxis);
+
   return (
-    <div>
-      <div className="container">
-        <div className="box">
-          <div
-            className="box y-axis"
-            style={{ height: `${yAxis && yAxis[0]}%` }}
-          >
-            {yAxis.map((item, index) => (
-              <div key={index}>
-                <span>{item}</span>
-              </div>
-            ))}
+    <div className="chart-container">
+      <div className="chart">
+        {yAxis.map((value, index) => (
+          <div className="bar-wrapper" key={index}>
+            <div className="bar" style={{ height: `${value}%` }}>
+              <span className="bar-value">{value}</span>
+            </div>
+            <span className="x-label">{xAxis[index]}</span>
           </div>
-        </div>
-        <div className="box1">
-          <div
-            className="box x-axis"
-            style={{ width: `${xAxis && xAxis[0]}%` }}
-          >
-            {xAxis.map((item, index) => (
-              <div key={index}>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
