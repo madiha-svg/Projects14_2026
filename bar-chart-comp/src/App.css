@@ -1,0 +1,42 @@
+.chart-container {
+  width: 700px;
+  height: 400px;
+  margin: 40px;
+}
+
+.chart {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 60px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 0 30px;
+}
+
+.bar-wrapper {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bar {
+  width: 40px;
+  background-color: teal;
+  position: relative;
+}
+
+.bar-value {
+  position: absolute;
+  top: -25px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.x-label {
+  margin-top: 10px;
+  font-size: 16px;
+}
