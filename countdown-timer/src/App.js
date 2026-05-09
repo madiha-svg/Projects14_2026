@@ -44,7 +44,7 @@ function App() {
     const h = Math.floor(time / 3600);
     const m = Math.floor(time % 3600) / 60;
     const s = time % 60;
-
+  
     return `${h.toString().padStart(2, "0")}:
             ${m.toString().padStart(2, "0")}:
             ${s.toString().padStart(2, "0")}`;
